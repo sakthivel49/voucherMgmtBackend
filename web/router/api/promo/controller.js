@@ -4,10 +4,10 @@ const logger = require(path.resolve('.') + '/utils/logger')
 const _ = require('lodash')
 
 const availbleCodes = [
-  { code: 'ABC100', discountValue: 100, expiry_at: '2018-05-10', title: "Flash Sale: Grab Rs 100 OFF" },
-  { code: 'ABC200', discountValue: 200, expiry_at: '2018-06-11', title: "Flash Sale: Grab Rs 200 OFF" },
-  { code: 'ABC300', discountValue: 300, expiry_at: '2018-06-12', title: "Flash Sale: Grab Rs 300 OFF" },
-  { code: 'ABC400', discountValue: 400, expiry_at: '2018-06-13', title: "Flash Sale: Grab Rs 400 OFF" }
+  { code: 'ABC100', discountValue: 100, expiry_at: '2018-07-20', title: "Flash Sale: Grab Rs 100 OFF" },
+  { code: 'ABC200', discountValue: 200, expiry_at: '2018-07-20', title: "Flash Sale: Grab Rs 200 OFF" },
+  { code: 'ABC300', discountValue: 300, expiry_at: '2018-07-20', title: "Flash Sale: Grab Rs 300 OFF" },
+  { code: 'ABC400', discountValue: 400, expiry_at: '2018-06-01', title: "Flash Sale: Grab Rs 400 OFF" }
 ]
 
 let Promo = function () {
