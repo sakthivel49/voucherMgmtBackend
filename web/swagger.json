@@ -1,0 +1,270 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "API Document",
+    "description": "Promo & Voucher API document",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:4001",
+  "basePath": "",
+  "tags": [
+    {
+      "name": "Promo",
+      "description": "API for Promotion code in the system"
+    },
+    {
+      "name": "Voucher",
+      "description": "API for vouchers in the system"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/promo": {
+      "post": {
+        "tags": [
+          "Promo"
+        ],
+        "summary": "Apply promotional code",
+        "parameters": [
+          {
+            "name": "promo",
+            "in": "body",
+            "description": "Promo code",
+            "schema": {
+              "$ref": "#/definitions/Promo"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Promo code is applied",
+            "schema": {
+              "$ref": "#/definitions/Promo"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Promo"
+        ],
+        "summary": "Get all promotional codes in system",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Promos"
+            }
+          }
+        }
+      }
+    },
+    "/voucher": {
+      "post": {
+        "tags": [
+          "Voucher"
+        ],
+        "summary": "Buy voucher",
+        "parameters": [
+          {
+            "name": "vocher",
+            "in": "body",
+            "description": "Promo code",
+            "schema": {
+              "$ref": "#/definitions/Voucher"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Voucher"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Voucher"
+        ],
+        "summary": "Get all vouchers",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Vouchers"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Promo": {
+      "required": [
+        "code",
+        "email",
+        "phone"
+      ],
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        }
+      },
+      "example": {
+        "code": "ABC300",
+        "email": "test@mailtrap.com",
+        "phone": "8012345678"
+      }
+    },
+    "Promos": {
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "discountValue": {
+          "type": "number"
+        },
+        "expiry_at": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "example": {
+        "code": "ABC300",
+        "email": "test@mailtrap.com",
+        "phone": "8012345678"
+      }
+    },
+    "Voucher": {
+      "required": [
+        "vouchertype",
+        "voucherid",
+        "price",
+        "quantity",
+        "sender"
+      ],
+      "properties": {
+        "vouchertype": {
+          "type": "string"
+        },
+        "voucherid": {
+          "type": "string"
+        },
+        "price": {
+          "type": "string"
+        },
+        "quantity": {
+          "type": "string"
+        },
+        "sender": {
+          "type": "object",
+          "properties": {
+            "firstname": {
+              "type": "string"
+            },
+            "lastname": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "phone": {
+              "type": "string"
+            }
+          }
+        },
+        "receiver": {
+          "type": "object",
+          "properties": {
+            "firstname": {
+              "type": "string"
+            },
+            "lastname": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "phone": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "example": {
+        "vouchertype": "voucher",
+        "voucherid": "gold",
+        "price": 1000,
+        "quantity": 1,
+        "sender": {
+          "firstname": "sakthivel",
+          "lastname": "k",
+          "email": "test@xyz.com",
+          "phone": "8012345678"
+        },
+        "receiver": {
+          "firstname": "sakthivel",
+          "lastname": "k",
+          "email": "test@xyz.com",
+          "phone": "8012345678"
+        }
+      }
+    },
+    "Vouchers": {
+      "required": [
+        "vouchertype",
+        "voucherid",
+        "title",
+        "description"
+      ],
+      "properties": {
+        "vouchertype": {
+          "type": "string"
+        },
+        "voucherid": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "example": {
+        "vouchertype": "voucher",
+        "voucherid": "gold",
+        "title": "Gold",
+        "description": "First Booking Voucher worth ₹ 600 and Service Voucher worth ₹ 100 Second Booking Voucher worth ₹ 199 and Service Voucher worth ₹ 100"
+      }
+    }
+  }
+}

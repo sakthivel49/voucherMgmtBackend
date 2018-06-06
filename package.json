@@ -1,0 +1,29 @@
+{
+  "name": "vouchers_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha **/*.spec.js",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "1.18.2",
+    "cors": "2.8.4",
+    "express": "^4.16.3",
+    "helmet": "3.8.2",
+    "joi": "11.3.4",
+    "jwt-simple": "0.5.1",
+    "lodash": "4.17.5",
+    "mongoose": "^5.1.4",
+    "swagger-ui-express": "^3.0.9",
+    "tracer": "^0.8.15"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "sinon": "^5.1.0"
+  }
+}
