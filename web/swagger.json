@@ -9,7 +9,7 @@
       "url": "https://opensource.org/licenses/MIT"
     }
   },
-  "host": "https://voucher-backend.herokuapp.com",
+  "host": "voucher-backend.herokuapp.com",
   "basePath": "",
   "tags": [
     {
@@ -22,7 +22,7 @@
     }
   ],
   "schemes": [
-    "http"
+    "https"
   ],
   "consumes": [
     "application/json"
